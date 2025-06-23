@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Sample extends StatelessWidget {
@@ -5,32 +6,61 @@ class Sample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( backgroundColor: Colors.greenAccent,
+    return Scaffold(
+      backgroundColor: Colors.teal,
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Center(
             child: CircleAvatar(
-              radius: 50,
+              radius: 100,
               backgroundImage: NetworkImage(
-                "https://cdn.prod.website-files.com/62d84e447b4f9e7263d31e94/6399a4d27711a5ad2c9bf5cd_ben-sweet-2LowviVHZ-E-unsplash-1.jpeg",
+                "https://i.redd.it/kcmfbrgmretc1.jpeg"),
+            ),
+          ),
+          Text(
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontSize: 40,
+            ),
+            "Sura",
+          ),
+          Text(
+            style: TextStyle(color: Colors.white, fontSize: 20),
+            "MP ",
+          ),
+          Divider(
+            thickness: 1,
+            color: Colors.white,
+            endIndent: 500,
+            indent: 500,
+          ),
+          SizedBox(height: 50 ,width: 700,
+            child: Card(elevation: 10,
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
+              child: Row(
+                children: [
+                  Icon(Icons.phone,color: Colors.teal,),
+                  SizedBox(width: 20),
+                  Text(style: TextStyle(color: Colors.teal),"7831294215"),
+                ],
               ),
             ),
           ),
-          Card(child: Row(children: [Padding(
-            padding: const EdgeInsets.only(left: 750),
-            child: Text("Name:sameeh"),
-          )],),)
-          ,
-          Card(child: Row(children: [Padding(
-            padding: const EdgeInsets.only(left: 750),
-            child: Icon(Icons.email),
-
-          ), Text("Email: sameeh@gmail.com")],),),
-          Card(child: Row(children: [Padding(
-            padding: const EdgeInsets.only(left: 750),
-            child: Icon(Icons.phone),
-          ) ,
-            SizedBox(width: 10,),Text("7831294215")],)),
+          SizedBox(width: 700, height: 50,
+            child: Card(elevation: 10,
+              shape: RoundedRectangleBorder(borderRadius:BorderRadius.circular(5)),
+              child: Row(
+                children: [
+                  Icon(Icons.email,color: Colors.teal,),
+                  SizedBox(width: 20),
+                  Text(style: TextStyle(color: Colors.teal),"sura@gmail.com"),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
